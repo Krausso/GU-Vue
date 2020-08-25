@@ -11,9 +11,6 @@ export default new Vuex.Store({
     userData: {},
     username: '',
   },
-  getters: {
-    userData: (state) => state.userData,
-  },
   actions: {
     getData: async ({state, commit}) => {
       const response = await axios.get(`https://api.github.com/users/${state.username}`)
