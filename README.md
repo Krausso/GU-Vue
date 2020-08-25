@@ -1,4 +1,13 @@
 # githubUser-vue
+Теst on Vue
+App has only one page which includes small description(no) and input below
+If you enter a username, you will get info about aforementioned user
+
+### Stack
+- Vue 2
+- Vuex
+- Axios
+
 
 ## Project setup
 ```
