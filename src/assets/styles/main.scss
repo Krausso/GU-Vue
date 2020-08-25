@@ -1,59 +1,78 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-@import './var';
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import "./var";
 
 * {
-    font-family: "Poppins", sans-serif;
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 #app {
-    display: flex;
-    align-items: center;
-    flex-flow: column nowrap;
+  display: flex;
+  align-items: center;
+  flex-flow: column nowrap;
 
-    width: 100vw !important;
+  width: 100vw !important;
 
-    .app-description, .app-home {
-        @extend #app;
+  .app-description,
+  .app-home,
+  .app-info {
+    @extend #app;
+  }
+
+  .app-title {
+    padding: 1.5vh 0;
+
+    width: 100%;
+
+    border-radius: 0 0 5px 5px;
+
+    text-align: center;
+
+    background: $mate-black;
+    color: lighten($grey, 15%);
+  }
+
+  .app-subtitle {
+    margin-top: 5vh;
+  }
+
+  .app-input {
+    padding: 0.5vh 0;
+    margin-top: 2vh;
+
+    width: 30%;
+
+    border: 1px solid darken($grey, 15%);
+    border-radius: 5px;
+
+    text-align: center;
+
+    background: $white;
+    color: $black;
+
+    transition: 0.2s;
+
+    &:focus {
+      background: lighten($grey, 15%);
     }
+  }
+  .app-btn {
+    margin-top: 2vh;
+    padding: .5vh 0;
 
-    .app-title {
-        padding: .5vh 0;
+    width: 15%;
+    border: 1px solid darken($grey, 15%);
+    border-radius: 5px;
 
-        width: 30%;
+    background: lighten($grey, 15%);
+  }
 
-        border-radius: 0 0 5px 5px;
+  .info-card {
+    @extend .app-btn;
 
-        text-align: center;
-        user-select: none;
-
-        background: $mate-black;
-        color: $mate-white;
-    }
-
-    .app-subtitle {
-        margin-top: 5vh;
-    }
-
-    .app-input {
-        @extend .app-title;
-
-        margin-top: .5vh;
-
-        border: 1px solid $black;
-        border-radius: 5px;
-
-        text-align: center;
-
-        background: $white;
-        color: $black;
-
-        transition: .2s;
-
-        &:focus {
-            background: $mate-white;
-        }
-    }
+    padding: .5vh .5vw;
+    width: 60%;
+  }
 }
