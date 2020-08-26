@@ -18,30 +18,27 @@
         Find account
       </button>
     </form>
-    <ShowInfo :info="this.$store.state.userData"/>
+    <Cards :info="this.$store.state.githubData"/>
   </section>
 </template>
 
 <script>
-import ShowInfo from '@/components/ShowInfo.vue';
+import Cards from '@/components/Cards.vue';
 
 export default {
   name: 'Home',
   data() {
     return {
       username: '',
-      found: false,
     };
   },
   components: {
-    ShowInfo,
+    Cards,
   },
   methods: {
     pushData() {
-      this.$store.commit('changeAuthData', this.username);
-      this.$store.dispatch('getData');
+      this.$store.dispatch('getData', this.username);
       this.username = '';
-      this.found = true;
     },
   },
 };

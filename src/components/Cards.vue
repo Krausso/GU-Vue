@@ -14,6 +14,11 @@
 <script>
 export default {
   name: 'ShowInfo',
-  props: ['info'],
+  props: {
+    info: {
+      type: Object,
+      required: true,
+    },
+  },
 };
 </script>

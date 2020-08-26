@@ -1,17 +1,17 @@
 <template>
   <div id="app">
-    <Description/>
+    <Header/>
     <router-view/>
   </div>
 </template>
 
 <script>
-import Description from '@/components/Description.vue';
+import Header from '@/components/Header.vue';
 
 export default {
   name: 'App',
   components: {
-    Description,
+    Header,
   },
 };
 </script>
