@@ -1,10 +1,7 @@
 /* eslint-disable */
 export default function correctData(data) {
-  console.log(data);
-
   const [followers, following] = [data.followers, data.following];
-
-  data = {
+  const neededData = {
     Profile: data.html_url,
     Username: data.login,
     Bio: data.bio || `${data.login} has no bio`,
@@ -14,5 +11,11 @@ export default function correctData(data) {
     'Followers: ': followers,
     'Following: ': following,
   }
-  return data;
+
+  let finalData = []
+  for (let [key, value] of Object.entries(neededData)) {
+    finalData.push([key, value]);
+  }
+
+  return finalData;
 }

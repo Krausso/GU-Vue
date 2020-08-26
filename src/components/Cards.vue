@@ -2,11 +2,11 @@
   <section class="app-info">
     <div
       class="info-card"
-      v-for="key in Object.keys(info)"
-      :key="key"
+      v-for="(pair, index) in info"
+      :key="index"
     >
-      <h3 class="card-title">{{ key }}</h3>
-      <p class="card-text">{{ info[key] }}</p>
+      <h3 class="card-title">{{ pair[0] }}</h3>
+      <p class="card-text">{{ pair[1] }}</p>
     </div>
   </section>
 </template>
@@ -16,9 +16,10 @@ export default {
   name: 'ShowInfo',
   props: {
     info: {
-      type: Object,
+      type: Array,
       required: true,
     },
   },
+  // [{key: value}, {key: value}]
 };
 </script>
